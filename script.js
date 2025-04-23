@@ -122,20 +122,33 @@ console.log(findLetter);
 
 //Exercise 4: Recursion
 
-const sumOfArray = (arrayOfNumbers) => {
-    if (arrayOfNumbers.length === 0){
-        return "Stop right there"
-    } else {
-        return  arrayOfNumbers.reduce((a,b) =>{
-            return a+b 
-        },0)
-    }
-    //Your code here
- }
- let numArray = [1,2,3,4,5,6]
- console.log(sumOfArray(numArray));
+// const sumOfArray = (arrayOfNumbers) => {
+//     if (arrayOfNumbers.length === 0){
+//         return "Stop right there"
+//     } else {
+//         return  arrayOfNumbers.reduce((a,b) =>{
+//             return a+b 
+//         },0)
+//     }
+//     //Your code here
+//  }
+//  let numArray = [1,2,3,4,5,6]
+//  console.log(sumOfArray(numArray));
  
  
  // Input: [1, 2, 3, 4, 5, 6]
  // Output: 21
+ 
+ const sumOfArray = (arrayOfNumbers) => {
+    if(arrayOfNumbers.length ==1){
+        return arrayOfNumbers[0];
+    }
+    const num = arrayOfNumbers.pop();
+    console.log(arrayOfNumbers);
+    console.log(num);
+    
+    return num + sumOfArray(arrayOfNumbers)
+    
+ }
+ console.log(sumOfArray([1,2,3,4,5,6]));
  
